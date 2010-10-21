@@ -1,9 +1,8 @@
-# News Mailer
-
-Allows you to send an email to a selected userclass with an entire months or a select days news items.
-
-
 # IMPORTANT!!!
 
 Before this plugin or menu item will work correctly with e107 you will need to rename the directory you're presented with to `newsmailer`.
 If you are not comfortable with doing this you will need to wait until I push a release to [plugins.e107](http://plugins.e107.org/).
+
+# News Mailer
+
+Allows you to send an email to a selected userclass with an entire months or a select days news items.
