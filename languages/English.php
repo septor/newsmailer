@@ -52,7 +52,7 @@ define("NMTEMPLATE_LAN005", "Title of the news item.");
 define("NMTEMPLATE_LAN006", "Author of the news item.");
 define("NMTEMPLATE_LAN007", "Text inside the summary field.");
 define("NMTEMPLATE_LAN008", "The body of the news item.");
-define("NMTEMPLATE_LAN009", "The URL to the news item.");
+define("NMTEMPLATE_LAN009", "The absolute URL to the news item.");
 define("NMTEMPLATE_LAN010", "Update News Item Template");
 define("NMTEMPLATE_LAN011", "The below box allows you to configure how the total email is presented.");
 define("NMTEMPLATE_LAN012", "This will display your website's name.");
