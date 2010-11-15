@@ -1,16 +1,16 @@
 <?php
 
-$menutitle  = "News Mailer Navigation";
+$menutitle  = NMMENU_LAN001;
 
-$butname[]  = "Settings";
+$butname[]  = NMMENU_LAN002;
 $butlink[]  = "admin_config.php";
 $butid[]    = "config";
 
-$butname[]  = "Send News Items";
+$butname[]  = NMMENU_LAN003;
 $butlink[]  = "admin_mailer.php";
 $butid[]    = "mailer";
 
-$butname[]  = "Configure Templates";
+$butname[]  = NMMENU_LAN004;
 $butlink[]  = "admin_template.php";
 $butid[]    = "template"; 
 

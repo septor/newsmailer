@@ -17,19 +17,19 @@ if(!defined("e107_INIT")) {
 require_once(e_HANDLER."userclass_class.php");
 if(!getperms("P")){ header("location:".e_BASE."index.php"); exit;}
 require_once(e_ADMIN."auth.php");
-//include_lan(e_PLUGIN."newsmailer/languages/".e_LANGUAGE.".php");
+include_lan(e_PLUGIN."newsmailer/languages/".e_LANGUAGE.".php");
 
 	
 if (isset($_POST['updatenewstemplate'])) {
 	$pref['newsmailer_template'] = $_POST['newstemplate'];
 	save_prefs();
-	$message = "News Items Template updated successfully!";
+	$message = NMTEMPLATE_LAN001;
 }
 
 if(isset($_POST['updateemailtemplate'])){
 	$pref['newsmailer_email'] = $_POST['emailtemplate'];
 	save_prefs();
-	$message = "Total Email Template updated successfully!";
+	$message = NMTEMPLATE_LAN002;
 }
 
 if (isset($message)) {
@@ -42,17 +42,17 @@ $text = "
 <table style='width:75%' class='fborder'>
 <tr>
 <td colspan='2' style='text-align:center' class='forumheader3'>
-The below box allows you to configure how the news items are presented. Keep in mind that this is <b>not</b> a template for the whole email.
+".NMTEMPLATE_LAN003."
 </td>
 </tr>
 <tr>
 <td style='width:40%; text-align:left' class='forumheader3'>
-The following tags will be converted to their respective values:<br /><br />
-<b>%news_title%</b> - Title of the news item.<br /><br />
-<b>%news_author%</b> - Author of the news item.<br /><br />
-<b>%news_summary%</b> - Text inside the summary field.<br /><br />
-<b>%news_body%</b> - The body of the news item.<br /><br />
-<b>%news_url%</b> - The absolute URL to the news item.
+".NMTEMPLATE_LAN004."<br /><br />
+<b>%news_title%</b> - ".NMTEMPLATE_LAN005."<br /><br />
+<b>%news_author%</b> - ".NMTEMPLATE_LAN006."<br /><br />
+<b>%news_summary%</b> - ".NMTEMPLATE_LAN007."<br /><br />
+<b>%news_body%</b> - ".NMTEMPLATE_LAN008."<br /><br />
+<b>%news_url%</b> - ".NMTEMPLATE_LAN009."
 </td>
 <td style='width:60%; text-align:center' class='forumheader3'>
 <textarea name='newstemplate' class='tbox' cols='90' rows='10'>".$pref['newsmailer_template']."</textarea>
@@ -60,7 +60,7 @@ The following tags will be converted to their respective values:<br /><br />
 </tr>
 <tr>
 <td colspan='2' style='text-align:center' class='forumheader'>
-<input class='button' type='submit' name='updatenewstemplate' value='Update News Item Template' />
+<input class='button' type='submit' name='updatenewstemplate' value='".NMTEMPLATE_LAN010."' />
 </td>
 </tr>
 </table>
@@ -72,17 +72,17 @@ The following tags will be converted to their respective values:<br /><br />
 <table style='width:75%' class='fborder'>
 <tr>
 <td colspan='2' style='text-align:center' class='forumheader3'>
-The below box allows you to configure how the total email is presented.
+".NMTEMPLATE_LAN011."
 </td>
 </tr>
 <tr>
 <td style='width:40%; text-align:left' class='forumheader3'>
-The following tags will be converted to their respective values:<br /><br />
-<b>%site_name%</b> - This will display your website's name. (".SITENAME.")<br /><br />
-<b>%site_url%</b> - This is the absolute URL to your website. (".SITEURL.")<br /><br />
-<b>%email_header%</b> - The content you enter in the header field before sending the email.<br /><br />
-<b>%email_body%</b> - The above template will be inserted here.<br /><br />
-<b>%email_footer%</b> - The content you enter in the footer field before sending the email.
+".NMTEMPLATE_LAN004."<br /><br />
+<b>%site_name%</b> - ".NMTEMPLATE_LAN012." (".SITENAME.")<br /><br />
+<b>%site_url%</b> - ".NMTEMPLATE_LAN013." (".SITEURL.")<br /><br />
+<b>%email_header%</b> - ".NMTEMPLATE_LAN014."<br /><br />
+<b>%email_body%</b> - ".NMTEMPLATE_LAN015."<br /><br />
+<b>%email_footer%</b> - ".NMTEMPLATE_LAN016."
 </td>
 <td style='width:60%; text-align:center' class='forumheader3'>
 <textarea name='emailtemplate' class='tbox' cols='90' rows='10'>".$pref['newsmailer_email']."</textarea>
@@ -90,7 +90,7 @@ The following tags will be converted to their respective values:<br /><br />
 </tr>
 <tr>
 <td colspan='2' style='text-align:center' class='forumheader'>
-<input class='button' type='submit' name='updateemailtemplate' value='Update Total Email Template' />
+<input class='button' type='submit' name='updateemailtemplate' value='".NMTEMPLATE_LAN017."' />
 </td>
 </tr>
 </table>
@@ -98,6 +98,6 @@ The following tags will be converted to their respective values:<br /><br />
 </div>
 ";
 
-$ns->tablerender("Configure Templates", $text);
+$ns->tablerender(NMTEMPLATE_LAN018, $text);
 require_once(e_ADMIN."footer.php");
 ?>

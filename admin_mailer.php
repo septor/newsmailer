@@ -20,7 +20,7 @@ require_once(e_ADMIN."auth.php");
 include_once(e_PLUGIN."newsmailer/class.php");
 require_once(e_HANDLER."mail.php");
 require_once(e_HANDLER."e_parse_class.php");
-//include_lan(e_PLUGIN."newsmailer/languages/".e_LANGUAGE.".php");
+include_lan(e_PLUGIN."newsmailer/languages/".e_LANGUAGE.".php");
 	
 if(isset($_POST['senditems'])){
 
@@ -67,7 +67,7 @@ if(isset($_POST['senditems'])){
 		}
 	}
 
-	$message = "Selected news items were sent to ".$numsent." ".($numsent == 1 ? "recipient" : "recipents")." successfully!";
+	$message = NMMAIL_LAN001.$numsent." ".($numsent == 1 ? NMMAIL_LAN002 : NMMAIL_LAN003).NMMAIL_LAN004;
 }
 
 if (isset($message)) {
@@ -79,7 +79,7 @@ $text = "
 <form method='post' action='".e_SELF."'>
 <table style='width:75%' class='fborder'>
 <tr>
-<td style='width:50%' class='forumheader3'>Userclass to send the news items to:</td>
+<td style='width:50%' class='forumheader3'>".NMMAIL_LAN005."</td>
 <td style='width:50%; text-align:right' class='forumheader3'>
 ".r_userclass('recipients', 0, 'off', 'member,admin,classes')."
 </td>
@@ -88,7 +88,7 @@ $text = "
 if($pref['newsmailer_timeframe'] == "bydate"){
 	$text .= "
 	<tr>
-	<td style='width:50%' class='forumheader3'>Date you want the news items pulled from:</td>
+	<td style='width:50%' class='forumheader3'>".NMMAIL_LAN006."</td>
 	<td style='width:50%; text-align:right' class='forumheader3'>
 	<input size='15' class='tbox' type='text' name='timeframe' value='".$pref['newsmailer_dateformat']."'>
 	</td>
@@ -96,7 +96,7 @@ if($pref['newsmailer_timeframe'] == "bydate"){
 }else if($pref['newsmailer_timeframe'] == "bymonth"){
 	$text .= "
 	<tr>
-	<td style='width:50%' class='forumheader3'>Month and year you want the news items pulled from:</td>
+	<td style='width:50%' class='forumheader3'>".NMMAIL_LAN007."</td>
 	<td style='width:50%; text-align:right' class='forumheader3'>
 	<select name='timeframe' class='tbox'>";
 
@@ -123,26 +123,26 @@ if($pref['newsmailer_timeframe'] == "bydate"){
 }
 
 $text .= "<tr>
-<td style='width:50%' class='forumheader3'>Email Subject:</td>
+<td style='width:50%' class='forumheader3'>".NMMAIL_LAN008."</td>
 <td style='width:50%; text-align:right' class='forumheader3'>
 <input size='40' class='tbox' type='text' name='subject'>
 </td>
 </tr>
 <tr>
-<td style='width:50%' class='forumheader3'>Message you want to appear before the email (header):</td>
+<td style='width:50%' class='forumheader3'>".NMMAIL_LAN009."</td>
 <td style='width:50%; text-align:right' class='forumheader3'>
 <input size='40' class='tbox' type='text' name='headermsg'>
 </td>
 </tr>
 <tr>
-<td style='width:50%' class='forumheader3'>Message you want to appear after the email (footer):</td>
+<td style='width:50%' class='forumheader3'>".NMMAIL_LAN010."</td>
 <td style='width:50%; text-align:right' class='forumheader3'>
 <input size='40' class='tbox' type='text' name='footermsg'>
 </td>
 </tr>
 <tr>
 <td colspan='2' style='text-align:center' class='forumheader'>
-<input class='button' type='submit' name='senditems' value='Send News Items!' />
+<input class='button' type='submit' name='senditems' value='".NMMAIL_LAN011."' />
 </td>
 </tr>
 </table>
@@ -150,6 +150,6 @@ $text .= "<tr>
 </div>
 ";
 
-$ns->tablerender("Send News Items", $text);
+$ns->tablerender(NMMAIL_LAN012, $text);
 require_once(e_ADMIN."footer.php");
 ?>

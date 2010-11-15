@@ -6,3 +6,7 @@ If you are not comfortable with doing this you will need to wait until I push a 
 # News Mailer
 
 Allows you to send an email to a selected userclass with an entire months or a select days news items.
+
+## Translations
+
+If you would like to translate this plugin, post the translations on [paste2.org](http://paste2.org/) and [PM](http://e107.org/e107_plugins/pm/pm.php?send.37) me the URL generated.
