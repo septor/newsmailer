@@ -6,7 +6,7 @@ include_lan(e_PLUGIN."newsmailer/languages/".e_LANGUAGE.".php");
 
 // Plugin info -------------------------------------------------------------------------------------------------------
 $eplug_name = NMPLUGIN_LAN001;
-$eplug_version = '0.04';
+$eplug_version = '0.05';
 $eplug_author = 'septor';
 $eplug_url = 'http://painswitch.com/';
 $eplug_email = 'patrickweaver@gmail.com';
